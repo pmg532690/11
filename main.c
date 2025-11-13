@@ -4,21 +4,15 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(void){
-	int i;
-	int grade[5];
-	int sum; 
-	for(i=0;i<5;i++)
-	{
-		printf("grade[%i]=", i);
-		scanf("%d", &grade[i]);
-	}
-	for(i=0;i<5;i++){
-		printf("grade[%i] = %i\n", i, *(grade+i));
-		sum = sum + *(grade+i) ;
-	}
+	int i = 100;
+	int *p = &i;
+	int **q = &p;
 	
-	printf("Average : %i\n", sum / 5);
+	*p = 200;
+	printf("i= %d, *p= %d, **q = %d\n", i, *p,**q);
 	
-	system("PAUSE");
+	**q = 300;
+	printf("i= %d, *p= %d, **q = %d\n", i, *p,**q);
+	
 	return 0;
 }
